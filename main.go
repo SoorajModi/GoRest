@@ -10,7 +10,7 @@ func main() {
 
 	router.GET("/hello", hello)
 
-	err := router.Run("localhost:8080")
+	err := router.Run("localhost:8000")
 	if err != nil {
 		return
 	}
