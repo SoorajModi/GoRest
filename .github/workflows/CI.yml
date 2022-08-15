@@ -20,11 +20,8 @@ jobs:
         with:
           go-version: ${{ matrix.golang }}
 
-      - name: Download dependencies 💿
-        run: go get .
-
       - name: Run tests
-        run: go test
+        run: go test -v .
 
       - name: Run build 🔨
-        run: go build
+        run: go build .
