@@ -8,7 +8,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.GET("/hello", hello)
+	router.GET("/hello", HelloHandler)
 
 	err := router.Run("localhost:8000")
 	if err != nil {
@@ -16,6 +16,6 @@ func main() {
 	}
 }
 
-func hello(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, "Hello world!")
+func HelloHandler(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, `Hello world!`)
 }
