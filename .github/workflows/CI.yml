@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        golang: [ 1.6, 1.7, 1.8 ]
+        golang: [ 1.6, 1.8, 1.9 ]
 
     steps:
       - name: Checkout 🛎️
@@ -20,8 +20,8 @@ jobs:
         with:
           go-version: ${{ matrix.golang }}
 
-      - name: Verify dependencies 💿
-        run: go mod verify
+      - name: Download dependencies 💿
+        run: go get .
 
       - name: Run tests
         run: go test
