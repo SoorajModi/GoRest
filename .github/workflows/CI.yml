@@ -27,10 +27,7 @@ jobs:
           export GOPATH=~/go
 
       - name: Download dependencies 💿
-        run: |
-          go mod download
-          go mod vendor
-          go mod verify
+        run: go get .
 
       - name: Run tests
         run: go test -v .
