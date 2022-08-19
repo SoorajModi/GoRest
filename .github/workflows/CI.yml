@@ -22,9 +22,9 @@ jobs:
 
       - name: Setup env variables
         run: |
-          export PATH=$PATH:$(go env GOPATH)/bin
           export GO111MODULE=on
-          export GOPATH=~/go
+          export GOPATH=$HOME/go
+          export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
       - name: Download dependencies 💿
         run: go get .
