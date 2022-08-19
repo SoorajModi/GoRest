@@ -20,8 +20,17 @@ jobs:
         with:
           go-version: ${{ matrix.golang }}
 
+      - name: Setup env variables
+        run: |
+          export PATH=$PATH:$(go env GOPATH)/bin
+          export GO111MODULE=on
+          export GOPATH=~/go
+
       - name: Download dependencies 💿
-        run: go mod download
+        run: |
+          go mod download
+          go mod vendor
+          go mod verify
 
       - name: Run tests
         run: go test -v .
