@@ -8,6 +8,12 @@ Install dependencies: `go get .`
 
 Run locally: `go run .`
 
+Run with Docker:
+
+`docker build -f Dockerfile -t docker-gorest .`
+
+`docker run -it --rm -p 8080:8080 docker-gorest`
+
 ## License
 
 MIT
